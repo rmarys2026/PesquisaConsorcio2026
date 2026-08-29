@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fatores de Motivação - Remo Engenharia</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=block" rel="stylesheet">
+<style>
+body { font-family: 'Inter', sans-serif; background-color: #f8f9ff; }
+.material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+.likert-option:hover .likert-circle { border-color: #063482; background-color: #eef2ff; }
+.likert-radio:checked + .likert-circle { background-color: #063482; border-color: #063482; box-shadow: 0 0 0 4px #d6e0ff; }
+.likert-radio:checked + .likert-circle::after { content: ''; width: 8px; height: 8px; background: white; border-radius: 50%; }
+.opcao-radio:checked ~ .opcao-caixa { border-color: #063482; background-color: #eef2ff; }
+.opcao-radio:checked ~ .opcao-caixa .opcao-bolinha { border-color: #063482; }
+.opcao-radio:checked ~ .opcao-caixa .opcao-bolinha::after { content: ''; display: block; width: 10px; height: 10px; margin: 3px; background: #063482; border-radius: 50%; }
+.opcao-checkbox:checked ~ .opcao-caixa { border-color: #1FC272; background-color: #eafff3; }
+.opcao-checkbox:checked ~ .opcao-caixa .opcao-quadrado { background-color: #1FC272; border-color: #1FC272; }
+.opcao-checkbox:checked ~ .opcao-caixa .opcao-quadrado::after { content: ''; color: white; font-size: 14px; line-height: 1; }
+</style>
+</head>
+<body class="text-[#0b1c30] min-h-screen flex flex-col">
+<header class="w-full bg-white border-b border-gray-200 sticky top-0 z-10">
+<div class="max-w-[720px] mx-auto px-6 py-4">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<img alt="Remo Engenharia" class="h-8 w-auto object-contain" src="../assets/img/logo-remo.png"/>
+</div>
+<span class="text-sm font-semibold text-[#063482]">Etapa Final • 1 de 3</span>
+</div>
+<div class="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
+<div class="h-full bg-[#1FC272] transition-all duration-500" style="width: 33%;"></div>
+</div>
+</div>
+</header>
+
+<main class="flex-grow max-w-[720px] mx-auto w-full px-6 py-8">
+<h1 class="text-2xl font-bold text-[#063482] mb-2">Fatores de Motivação</h1>
+<p class="text-gray-600 mb-6">Marque até três fatores que mais motivam você.</p>
+<div class="space-y-3">
+<label class="block cursor-pointer">
+<input class="hidden opcao-checkbox" data-fator name="fatores_motivacao" type="checkbox" value="remuneracao"/>
+<div class="opcao-caixa flex items-center gap-3 p-4 border-2 border-gray-200 rounded-xl transition-all hover:border-gray-300">
+<span class="opcao-quadrado flex-shrink-0 w-5 h-5 rounded border-2 border-gray-300 flex items-center justify-center text-white">✓</span>
+<span class="text-gray-800">Remuneração</span>
+</div>
+</label><label class="block cursor-pointer">
+<input class="hidden opcao-checkbox" data-fator name="fatores_motivacao" type="checkbox" value="beneficios"/>
+<div class="opcao-caixa flex items-center gap-3 p-4 border-2 border-gray-200 rounded-xl transition-all hover:border-gray-300">
+<span class="opcao-quadrado flex-shrink-0 w-5 h-5 rounded border-2 border-gray-300 flex items-center justify-center text-white">✓</span>
+<span class="text-gray-800">Benefícios</span>
+</div>
+</label><label class="block cursor-pointer">
+<input class="hidden opcao-checkbox" data-fator name="fatores_motivacao" type="checkbox" value="estabilidade"/>
+<div class="opcao-caixa flex items-center gap-3 p-4 border-2 border-gray-200 rounded-xl transition-all hover:border-gray-300">
+<span class="opcao-quadrado flex-shrink-0 w-5 h-5 rounded border-2 border-gray-300 flex items-center justify-center text-white">✓</span>
+<span class="text-gray-800">Estabilidade</span>
+</div>
+</label><label class="block cursor-pointer">
+<input class="hidden opcao-checkbox" data-fator name="fatores_motivacao" type="checkbox" value="aprendizado"/>
+<div class="opcao-caixa flex items-center gap-3 p-4 border-2 border-gray-200 rounded-xl transition-all hover:border-gray-300">
+<span class="opcao-quadrado flex-shrink-0 w-5 h-5 rounded border-2 border-gray-300 flex items-center justify-center text-white">✓</span>
+<span class="text-gray-800">Aprendizado</span>
+</div>
+</label><label class="block cursor-pointer">
+<input class="hidden opcao-checkbox" data-fator name="fatores_motivacao" type="checkbox" value="relacionamento"/>
+<div class="opcao-caixa flex items-center gap-3 p-4 border-2 border-gray-200 rounded-xl transition-all hover:border-gray-300">
+<span class="opcao-quadrado flex-shrink-0 w-5 h-5 rounded border-2 border-gray-300 flex items-center justify-center text-white">✓</span>
+<span class="text-gray-800">Relacionamento</span>
+</div>
+</label><label class="block cursor-pointer">
+<input class="hidden opcao-checkbox" data-fator name="fatores_motivacao" type="checkbox" value="reconhecimento"/>
+<div class="opcao-caixa flex items-center gap-3 p-4 border-2 border-gray-200 rounded-xl transition-all hover:border-gray-300">
+<span class="opcao-quadrado flex-shrink-0 w-5 h-5 rounded border-2 border-gray-300 flex items-center justify-center text-white">✓</span>
+<span class="text-gray-800">Reconhecimento</span>
+</div>
+</label><label class="block cursor-pointer">
+<input class="hidden opcao-checkbox" data-fator name="fatores_motivacao" type="checkbox" value="proposito_missao"/>
+<div class="opcao-caixa flex items-center gap-3 p-4 border-2 border-gray-200 rounded-xl transition-all hover:border-gray-300">
+<span class="opcao-quadrado flex-shrink-0 w-5 h-5 rounded border-2 border-gray-300 flex items-center justify-center text-white">✓</span>
+<span class="text-gray-800">Propósito/missão</span>
+</div>
+</label><label class="block cursor-pointer">
+<input class="hidden opcao-checkbox" data-fator name="fatores_motivacao" type="checkbox" value="lideranca"/>
+<div class="opcao-caixa flex items-center gap-3 p-4 border-2 border-gray-200 rounded-xl transition-all hover:border-gray-300">
+<span class="opcao-quadrado flex-shrink-0 w-5 h-5 rounded border-2 border-gray-300 flex items-center justify-center text-white">✓</span>
+<span class="text-gray-800">Liderança</span>
+</div>
+</label><label class="block cursor-pointer">
+<input class="hidden opcao-checkbox" data-fator name="fatores_motivacao" type="checkbox" value="condicoes_trabalho"/>
+<div class="opcao-caixa flex items-center gap-3 p-4 border-2 border-gray-200 rounded-xl transition-all hover:border-gray-300">
+<span class="opcao-quadrado flex-shrink-0 w-5 h-5 rounded border-2 border-gray-300 flex items-center justify-center text-white">✓</span>
+<span class="text-gray-800">Condições de trabalho</span>
+</div>
+</label>
+<div class="p-4 border-2 border-gray-200 rounded-xl">
+<label class="text-gray-800 font-medium block mb-2">Outro:</label>
+<input class="w-full border border-gray-300 rounded-lg px-3 py-2" id="fatores_motivacao_outro" placeholder="Especifique aqui" type="text"/>
+</div>
+</div>
+<div class="flex justify-between items-center gap-4 mt-8">
+<button class="flex items-center gap-2 px-5 py-3 border-2 border-[#063482] text-[#063482] font-bold rounded-lg hover:bg-[#eef2ff] transition-all active:scale-95" id="btn-anterior" type="button">
+<span class="material-symbols-outlined">arrow_back</span>
+Anterior
+</button>
+<button class="flex items-center gap-2 px-6 py-3 bg-[#063482] text-white font-bold rounded-lg hover:opacity-90 shadow-md transition-all active:scale-95" id="btn-proxima" type="button">
+Próxima Etapa
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<div class="hidden mt-4 px-4 py-3 rounded-lg text-sm font-medium" id="status-msg"></div>
+
+</main>
+<footer class="w-full py-6 bg-white border-t border-gray-200 mt-auto">
+<div class="max-w-[720px] mx-auto px-6 text-center">
+<p class="text-xs text-gray-500 mb-2">© 2026 Remo Engenharia. Sua participação é 100% anônima e segura.</p>
+<div class="flex justify-center gap-4">
+<a class="text-xs text-gray-500 hover:text-[#063482]" href="../suporte/index.html">Suporte</a>
+<a class="text-xs text-gray-500 hover:text-[#063482]" href="../privacidade/index.html">Privacidade</a>
+<a class="text-xs text-gray-500 hover:text-[#063482]" href="../termos-de-uso/index.html">Termos de Uso</a>
+</div>
+</div>
+</footer>
+<script src="../assets/sheetdb-connector.js"></script>
+<script>
+(function () {
+
+    const btnProxima = document.getElementById('btn-proxima');
+    const btnAnterior = document.getElementById('btn-anterior');
+    const statusMsg = document.getElementById('status-msg');
+
+    function mostrarStatus(msg, tipo) {
+        statusMsg.textContent = msg;
+        statusMsg.classList.remove('hidden', 'bg-red-100', 'text-red-700', 'bg-green-100', 'text-green-700');
+        statusMsg.classList.add(tipo === 'erro' ? 'bg-red-100' : 'bg-green-100', tipo === 'erro' ? 'text-red-700' : 'text-green-700');
+    }
+
+    const maxAllowed = 3;
+    const checkboxes = document.querySelectorAll('[data-fator]');
+    const outroInput = document.getElementById('fatores_motivacao_outro');
+
+    checkboxes.forEach(cb => {
+        cb.addEventListener('change', () => {
+            const marcados = document.querySelectorAll('[data-fator]:checked').length;
+            if (marcados > maxAllowed) cb.checked = false;
+        });
+    });
+
+    let unidadeSalva = null;
+
+    window.addEventListener('DOMContentLoaded', async () => {
+        await reenviarPendentes();
+        const salvo = await buscarRespostasSalvas();
+        if (salvo) {
+            unidadeSalva = salvo.demog_unidade;
+            if (salvo.fatores_motivacao) {
+                salvo.fatores_motivacao.split(',').forEach(v => {
+                    const input = document.querySelector(`[data-fator][value="${v}"]`);
+                    if (input) input.checked = true;
+                });
+            }
+            if (salvo.fatores_motivacao_outro) {
+                outroInput.value = salvo.fatores_motivacao_outro;
+            }
+        }
+    });
+
+    btnProxima.addEventListener('click', async () => {
+        const marcados = Array.from(document.querySelectorAll('[data-fator]:checked')).map(i => i.value);
+        if (marcados.length === 0 && !outroInput.value.trim()) {
+            mostrarStatus('Por favor, selecione pelo menos um fator ou preencha o campo "Outro".', 'erro');
+            return;
+        }
+        btnProxima.disabled = true;
+        const dados = { fatores_motivacao: marcados.join(',') };
+        if (outroInput.value.trim()) dados.fatores_motivacao_outro = outroInput.value.trim();
+        try {
+            if (typeof salvarRespostasEtapa !== 'function') {
+                throw new Error('sheetdb-connector.js não carregou. Verifique a pasta "assets".');
+            }
+            const resultado = await salvarRespostasEtapa(dados);
+            if (resultado.ok) {
+                window.location.href = '../enps/index.html';
+                return;
+            }
+            mostrarStatus('Não foi possível salvar agora: ' + (resultado.error || 'erro desconhecido') + '. Suas respostas foram guardadas e serão reenviadas automaticamente.', 'erro');
+        } catch (err) {
+            console.error(err);
+            mostrarStatus('Erro inesperado: ' + err.message, 'erro');
+        } finally {
+            btnProxima.disabled = false;
+        }
+    });
+
+    btnAnterior.addEventListener('click', async () => {
+        if (!unidadeSalva) {
+            const salvo = await buscarRespostasSalvas();
+            unidadeSalva = salvo ? salvo.demog_unidade : null;
+        }
+        if (unidadeSalva === 'ncsr_adm') {
+            window.location.href = '../questionario_indiretos_bloco_7/index.html';
+        } else {
+            window.location.href = '../questionario_operacional_bloco_8/index.html';
+        }
+    });
+})();
+</script>
+</body></html>

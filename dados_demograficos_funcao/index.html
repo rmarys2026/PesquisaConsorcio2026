@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Função - Remo Engenharia</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=block" rel="stylesheet">
+<style>
+body { font-family: 'Inter', sans-serif; background-color: #f8f9ff; }
+.material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+.likert-option:hover .likert-circle { border-color: #063482; background-color: #eef2ff; }
+.likert-radio:checked + .likert-circle { background-color: #063482; border-color: #063482; box-shadow: 0 0 0 4px #d6e0ff; }
+.likert-radio:checked + .likert-circle::after { content: ''; width: 8px; height: 8px; background: white; border-radius: 50%; }
+.opcao-radio:checked ~ .opcao-caixa { border-color: #063482; background-color: #eef2ff; }
+.opcao-radio:checked ~ .opcao-caixa .opcao-bolinha { border-color: #063482; }
+.opcao-radio:checked ~ .opcao-caixa .opcao-bolinha::after { content: ''; display: block; width: 10px; height: 10px; margin: 3px; background: #063482; border-radius: 50%; }
+.opcao-checkbox:checked ~ .opcao-caixa { border-color: #1FC272; background-color: #eafff3; }
+.opcao-checkbox:checked ~ .opcao-caixa .opcao-quadrado { background-color: #1FC272; border-color: #1FC272; }
+.opcao-checkbox:checked ~ .opcao-caixa .opcao-quadrado::after { content: ''; color: white; font-size: 14px; line-height: 1; }
+</style>
+</head>
+<body class="text-[#0b1c30] min-h-screen flex flex-col">
+<header class="w-full bg-white border-b border-gray-200 sticky top-0 z-10">
+<div class="max-w-[720px] mx-auto px-6 py-4">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<img alt="Remo Engenharia" class="h-8 w-auto object-contain" src="../assets/img/logo-remo.png"/>
+</div>
+<span class="text-sm font-semibold text-[#063482]">Dados Demográficos • Etapa 2 de 3</span>
+</div>
+<div class="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
+<div class="h-full bg-[#1FC272] transition-all duration-500" style="width: 66%;"></div>
+</div>
+</div>
+</header>
+
+<main class="flex-grow max-w-[720px] mx-auto w-full px-6 py-8">
+<h1 class="text-2xl font-bold text-[#063482] mb-2">Função</h1>
+<p class="text-gray-600 mb-6">Qual melhor grupo representa sua função?</p>
+
+<div class="space-y-3">
+<label class="block cursor-pointer">
+<input class="hidden opcao-radio" name="demog_funcao" type="radio" value="1"/>
+<div class="opcao-caixa flex items-center gap-3 p-4 border-2 border-gray-200 rounded-xl transition-all hover:border-gray-300">
+<span class="opcao-bolinha flex-shrink-0 w-5 h-5 rounded-full border-2 border-gray-300 flex items-center justify-center"></span>
+<span class="text-gray-800">Operacional</span>
+</div>
+</label><label class="block cursor-pointer">
+<input class="hidden opcao-radio" name="demog_funcao" type="radio" value="2"/>
+<div class="opcao-caixa flex items-center gap-3 p-4 border-2 border-gray-200 rounded-xl transition-all hover:border-gray-300">
+<span class="opcao-bolinha flex-shrink-0 w-5 h-5 rounded-full border-2 border-gray-300 flex items-center justify-center"></span>
+<span class="text-gray-800">Técnico/Administrativo</span>
+</div>
+</label><label class="block cursor-pointer">
+<input class="hidden opcao-radio" name="demog_funcao" type="radio" value="3"/>
+<div class="opcao-caixa flex items-center gap-3 p-4 border-2 border-gray-200 rounded-xl transition-all hover:border-gray-300">
+<span class="opcao-bolinha flex-shrink-0 w-5 h-5 rounded-full border-2 border-gray-300 flex items-center justify-center"></span>
+<span class="text-gray-800">Analista/Especialista</span>
+</div>
+</label><label class="block cursor-pointer">
+<input class="hidden opcao-radio" name="demog_funcao" type="radio" value="4"/>
+<div class="opcao-caixa flex items-center gap-3 p-4 border-2 border-gray-200 rounded-xl transition-all hover:border-gray-300">
+<span class="opcao-bolinha flex-shrink-0 w-5 h-5 rounded-full border-2 border-gray-300 flex items-center justify-center"></span>
+<span class="text-gray-800">Supervisão/Coordenação</span>
+</div>
+</label><label class="block cursor-pointer">
+<input class="hidden opcao-radio" name="demog_funcao" type="radio" value="5"/>
+<div class="opcao-caixa flex items-center gap-3 p-4 border-2 border-gray-200 rounded-xl transition-all hover:border-gray-300">
+<span class="opcao-bolinha flex-shrink-0 w-5 h-5 rounded-full border-2 border-gray-300 flex items-center justify-center"></span>
+<span class="text-gray-800">Gerência/Diretoria</span>
+</div>
+</label>
+</div>
+<div class="flex justify-between items-center gap-4 mt-8">
+<button class="flex items-center gap-2 px-5 py-3 border-2 border-[#063482] text-[#063482] font-bold rounded-lg hover:bg-[#eef2ff] transition-all active:scale-95" id="btn-anterior" type="button">
+<span class="material-symbols-outlined">arrow_back</span>
+Anterior
+</button>
+<button class="flex items-center gap-2 px-6 py-3 bg-[#063482] text-white font-bold rounded-lg hover:opacity-90 shadow-md transition-all active:scale-95" id="btn-proxima" type="button">
+Próxima Etapa
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<div class="hidden mt-4 px-4 py-3 rounded-lg text-sm font-medium" id="status-msg"></div>
+
+</main>
+<footer class="w-full py-6 bg-white border-t border-gray-200 mt-auto">
+<div class="max-w-[720px] mx-auto px-6 text-center">
+<p class="text-xs text-gray-500 mb-2">© 2026 Remo Engenharia. Sua participação é 100% anônima e segura.</p>
+<div class="flex justify-center gap-4">
+<a class="text-xs text-gray-500 hover:text-[#063482]" href="../suporte/index.html">Suporte</a>
+<a class="text-xs text-gray-500 hover:text-[#063482]" href="../privacidade/index.html">Privacidade</a>
+<a class="text-xs text-gray-500 hover:text-[#063482]" href="../termos-de-uso/index.html">Termos de Uso</a>
+</div>
+</div>
+</footer>
+<script src="../assets/sheetdb-connector.js"></script>
+<script>
+(function () {
+
+    const btnProxima = document.getElementById('btn-proxima');
+    const btnAnterior = document.getElementById('btn-anterior');
+    const statusMsg = document.getElementById('status-msg');
+
+    function mostrarStatus(msg, tipo) {
+        statusMsg.textContent = msg;
+        statusMsg.classList.remove('hidden', 'bg-red-100', 'text-red-700', 'bg-green-100', 'text-green-700');
+        statusMsg.classList.add(tipo === 'erro' ? 'bg-red-100' : 'bg-green-100', tipo === 'erro' ? 'text-red-700' : 'text-green-700');
+    }
+
+    const CAMPO = 'demog_funcao';
+
+    window.addEventListener('DOMContentLoaded', async () => {
+        await reenviarPendentes();
+        const salvo = await buscarRespostasSalvas();
+        if (salvo && salvo[CAMPO]) {
+            const input = document.querySelector(`input[name="${CAMPO}"][value="${salvo[CAMPO]}"]`);
+            if (input) input.checked = true;
+        }
+    });
+
+    
+
+    btnProxima.addEventListener('click', async () => {
+        const marcado = document.querySelector(`input[name="${CAMPO}"]:checked`);
+        if (!marcado) {
+            mostrarStatus('Por favor, selecione uma opção antes de continuar.', 'erro');
+            return;
+        }
+        btnProxima.disabled = true;
+        try {
+            if (typeof salvarRespostasEtapa !== 'function') {
+                throw new Error('sheetdb-connector.js não carregou. Verifique a pasta "assets".');
+            }
+            const resultado = await salvarRespostasEtapa({ [CAMPO]: marcado.value });
+            if (resultado.ok) {
+                window.location.href = '../dados_demograficos_tempo_empresa/index.html';
+                return;
+            }
+            mostrarStatus('Não foi possível salvar agora: ' + (resultado.error || 'erro desconhecido') + '. Suas respostas foram guardadas e serão reenviadas automaticamente.', 'erro');
+        } catch (err) {
+            console.error(err);
+            mostrarStatus('Erro inesperado: ' + err.message, 'erro');
+        } finally {
+            btnProxima.disabled = false;
+        }
+    });
+
+    btnAnterior.addEventListener('click', () => window.location.href = '../dados_demograficos_unidade/index.html');
+})();
+</script>
+</body></html>

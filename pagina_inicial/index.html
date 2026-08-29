@@ -1,0 +1,345 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Pesquisa de Clima Organizacional – Remo Engenharia</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-bright": "#f8f9ff",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed": "#d2e4ff",
+                    "on-secondary-fixed-variant": "#004b6f",
+                    "surface-container-low": "#eff4ff",
+                    "error": "#ba1a1a",
+                    "surface-dim": "#cbdbf5",
+                    "on-tertiary-fixed-variant": "#005048",
+                    "on-primary-container": "#8ebdf9",
+                    "outline": "#727780",
+                    "surface-variant": "#d3e4fe",
+                    "primary-container": "#0f4c81",
+                    "tertiary-fixed": "#71f8e4",
+                    "on-background": "#0b1c30",
+                    "inverse-surface": "#213145",
+                    "inverse-primary": "#a0c9ff",
+                    "on-primary-fixed": "#001c37",
+                    "surface-container-high": "#dce9ff",
+                    "primary-fixed-dim": "#a0c9ff",
+                    "outline-variant": "#c2c7d1",
+                    "secondary-container": "#58bcfd",
+                    "on-tertiary-container": "#3ecebc",
+                    "inverse-on-surface": "#eaf1ff",
+                    "error-container": "#ffdad6",
+                    "on-primary": "#ffffff",
+                    "secondary-fixed": "#cae6ff",
+                    "tertiary": "#003b34",
+                    "surface": "#f8f9ff",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-fixed": "#00201c",
+                    "on-surface": "#0b1c30",
+                    "on-secondary-container": "#004a6d",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed-variant": "#07497d",
+                    "background": "#f8f9ff",
+                    "primary": "#00355f",
+                    "on-secondary-fixed": "#001e2f",
+                    "surface-tint": "#2d6197",
+                    "tertiary-container": "#00544b",
+                    "on-error-container": "#93000a",
+                    "surface-container-highest": "#d3e4fe",
+                    "secondary": "#006492",
+                    "secondary-fixed-dim": "#8ccdff",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed-dim": "#4fdbc8",
+                    "on-surface-variant": "#42474f",
+                    "surface-container": "#e5eeff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sm": "12px",
+                    "xs": "4px",
+                    "md": "24px",
+                    "gutter": "24px",
+                    "container-max": "1200px",
+                    "xl": "80px",
+                    "base": "8px",
+                    "lg": "48px"
+            },
+            "fontFamily": {
+                    "label-md": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "caption": ["Inter"]
+            },
+            "fontSize": {
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(8px);
+            border: 1px solid #E2E8F0;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface-bright text-on-surface min-h-screen flex flex-col overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="bg-surface-container-lowest dark:bg-inverse-surface border-b border-outline-variant dark:border-outline w-full h-16 sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-gutter max-w-container-max mx-auto h-full">
+<div class="flex items-center gap-xs">
+<img alt="Logo Remo Engenharia" class="h-10 w-auto object-contain" src="../assets/img/logo-remo.png"/>
+</div>
+<div class="hidden md:flex items-center gap-md">
+<a class="text-primary dark:text-inverse-primary font-bold border-b-2 border-primary dark:border-inverse-primary pb-1 font-body-md text-body-md transition-all duration-200" href="#">Pesquisas</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors font-body-md text-body-md" href="#secao-metodologia" id="link-sobre-pesquisa">Sobre a Pesquisa</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors font-body-md text-body-md" href="#" id="link-faq">FAQ</a>
+</div>
+<div class="flex items-center gap-sm">
+<button class="p-sm text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors" id="btn-help" type="button">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Hero / Content Canvas -->
+<main class="flex-grow">
+<!-- Hero Section -->
+<div class="bg-surface-container-low py-xl px-gutter">
+<div class="max-w-[720px] mx-auto text-center relative z-10">
+<div class="relative mb-lg">
+<img alt="Equipe da Remo Engenharia em campo" class="w-full h-auto object-cover" src="../assets/img/foto-equipe-remo.png"/>
+<div class="absolute bottom-3 left-1/2 -translate-x-1/2 inline-flex items-center gap-xs bg-black/50 text-white px-sm py-xs rounded-full">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+<span class="font-label-md text-label-md">Pesquisa 100% Anônima</span>
+</div>
+</div>
+<div class="bg-white rounded-xl p-md sm:p-lg">
+<h1 class="font-display-lg text-2xl sm:text-4xl md:text-display-lg text-on-surface mb-md tracking-tight leading-tight break-words">PESQUISA DE CLIMA ORGANIZACIONAL 2026</h1>
+<div id="sobre-pesquisa">
+<div class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed space-y-3 text-justify">
+<p class="font-bold text-on-surface">Queremos ouvir você!</p>
+<p>Nossa empresa cresce quando ouvimos as pessoas. Por isso, sua participação nesta pesquisa é muito importante.</p>
+<p>Este é um espaço para você compartilhar, de forma sincera e confidencial, como percebe o ambiente de trabalho na REMO. Sua opinião nos ajudará a reconhecer nossos pontos fortes e identificar oportunidades para construir uma empresa cada vez melhor para todos.</p>
+<p>Fique tranquilo(a): suas respostas são confidenciais e serão analisadas apenas de forma agrupada, sem qualquer identificação individual.</p>
+<p>Obrigado por participar. Sua voz constrói a REMO que queremos.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Decorative Subtle Shapes -->
+<div class="absolute -top-12 -right-12 w-64 h-64 bg-primary-container/10 rounded-full blur-3xl opacity-50"></div>
+<div class="absolute -bottom-12 -left-12 w-64 h-64 bg-secondary-container/10 rounded-full blur-3xl opacity-50"></div>
+</div>
+<!-- Methodology & Security Section -->
+
+<!-- Final Call to Action -->
+<section class="max-w-[720px] mx-auto px-gutter pb-xl" id="secao-cta">
+<div class="bg-surface-container-low rounded-xl p-lg text-center border border-outline-variant" id="conteudo-cta">
+<h4 class="font-headline-lg text-headline-lg text-primary mb-sm">Pronto para começar?</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md max-w-[560px] mx-auto">
+                    Leva cerca de 8 minutos. Suas respostas são 100% anônimas e ajudam a construir uma Remo Engenharia melhor para todos.
+                </p>
+<button class="bg-primary hover:bg-primary/90 text-on-primary font-bold px-lg py-md rounded-lg shadow-lg hover:scale-[1.02] transition-all duration-200 inline-flex items-center gap-sm group" id="btn-iniciar" type="button">
+<span class="font-body-md text-body-md uppercase tracking-wider">Iniciar Pesquisa</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface dark:bg-inverse-surface border-t border-outline-variant dark:border-outline w-full py-md">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-gutter max-w-container-max mx-auto gap-md md:gap-0">
+<div class="flex flex-col items-center md:items-start">
+<p class="font-caption text-caption text-on-surface-variant">© 2026 Remo Engenharia. Todos os direitos reservados.</p>
+</div>
+<div class="flex gap-md">
+<a class="font-caption text-caption text-on-surface-variant hover:text-primary transition-colors duration-200" href="../suporte/index.html">Suporte</a>
+<a class="font-caption text-caption text-on-surface-variant hover:text-primary transition-colors duration-200" href="../privacidade/index.html">Privacidade</a>
+<a class="font-caption text-caption text-on-surface-variant hover:text-primary transition-colors duration-200" href="../termos-de-uso/index.html">Termos de Uso</a>
+</div>
+</div>
+</footer>
+<script>
+        // Verifica se esta pessoa já concluiu a pesquisa neste navegador
+        document.addEventListener('DOMContentLoaded', () => {
+            if (localStorage.getItem('remo_consorcio_2026_concluido') === 'true') {
+                document.getElementById('conteudo-cta').innerHTML = `
+                    <span class="material-symbols-outlined text-[#1FC272] text-5xl mb-sm" style="font-variation-settings: 'FILL' 1;">verified</span>
+                    <h4 class="font-headline-lg text-headline-lg text-primary mb-sm">Você já respondeu esta pesquisa</h4>
+                    <p class="font-body-md text-body-md text-on-surface-variant max-w-[560px] mx-auto">Obrigado pela sua participação! Cada colaborador responde apenas uma vez. Se você acredita que isso é um engano, entre em contato com o RH ou a TI da sua unidade.</p>
+                `;
+            }
+        });
+    </script>
+<script>
+        // Simple micro-interaction for the CTA button pulse
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('btn-iniciar');
+            if(btn) {
+                btn.addEventListener('mousedown', () => {
+                    btn.classList.add('scale-95');
+                });
+                btn.addEventListener('mouseup', () => {
+                    btn.classList.remove('scale-95');
+                });
+            }
+        });
+    </script>
+<script>
+        document.getElementById('btn-iniciar').addEventListener('click', () => {
+            window.location.href = '../dados_demograficos_unidade/index.html';
+        });
+    </script>
+
+
+
+<!-- FAQ Modal -->
+<div class="fixed inset-0 bg-black/50 z-[100] hidden items-center justify-center p-gutter" id="faq-modal">
+<div class="bg-surface-bright rounded-xl shadow-xl max-w-[560px] w-full max-h-[80vh] overflow-y-auto">
+<div class="flex items-center justify-between p-md border-b border-outline-variant sticky top-0 bg-surface-bright">
+<h3 class="font-headline-md text-headline-md text-primary">Perguntas Frequentes</h3>
+<button class="p-xs text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors" id="btn-fechar-faq" type="button">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="p-md space-y-md">
+<div>
+<h4 class="font-label-bold text-on-surface mb-xs">Quanto tempo leva para responder?</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Em média 8 minutos. Você pode fazer em qualquer dispositivo (computador ou celular).</p>
+</div>
+<div>
+<h4 class="font-label-bold text-on-surface mb-xs">Minhas respostas são realmente anônimas?</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Sim. Não coletamos nome, matrícula ou qualquer identificação individual. Os dados são analisados apenas de forma agregada por localidade, hierarquia e segmento.</p>
+</div>
+<div>
+<h4 class="font-label-bold text-on-surface mb-xs">Quem vai ver os resultados?</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Os resultados consolidados (nunca respostas individuais) são compartilhados com a liderança da Remo Engenharia para orientar planos de ação.</p>
+</div>
+<div>
+<h4 class="font-label-bold text-on-surface mb-xs">Sou obrigado a responder todas as perguntas?</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">As perguntas de múltipla escolha e de escala são obrigatórias para garantir a qualidade da análise. Os campos de texto livre são opcionais.</p>
+</div>
+<div>
+<h4 class="font-label-bold text-on-surface mb-xs">Posso interromper e continuar depois?</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Recomendamos concluir em uma única sessão, já que leva poucos minutos. Se sair no meio, será necessário recomeçar.</p>
+</div>
+<div>
+<h4 class="font-label-bold text-on-surface mb-xs">Ainda tenho dúvidas. Com quem falo?</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Entre em contato com a equipe de RH ou de TI da sua unidade operacional.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Sobre a Pesquisa Modal -->
+<div class="fixed inset-0 bg-black/50 z-[100] hidden items-center justify-center p-gutter" id="sobre-modal">
+<div class="bg-surface-bright rounded-xl shadow-xl max-w-[920px] w-full max-h-[80vh] overflow-y-auto">
+<div class="flex items-center justify-between p-md border-b border-outline-variant sticky top-0 bg-surface-bright">
+<h3 class="font-headline-md text-headline-md text-primary">Sobre a Pesquisa</h3>
+<button class="p-xs text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors" id="btn-fechar-sobre" type="button">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="p-md">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+<div class="glass-card p-md rounded-xl border border-outline-variant/30 shadow-sm min-w-0">
+<div class="w-12 h-12 bg-surface-container-high rounded-lg flex items-center justify-center mb-sm">
+<span class="material-symbols-outlined text-primary">analytics</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-primary mb-xs break-words">Metodologia</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-justify">
+O instrumento foi desenvolvido tomando como referência as principais metodologias internacionais de clima e engajamento (GPTW e Gallup), adaptadas à realidade operacional da REMO.
+</p>
+</div>
+<div class="glass-card p-md rounded-xl border-l-4 border-secondary-container shadow-sm min-w-0">
+<div class="w-12 h-12 bg-surface-container-high rounded-lg flex items-center justify-center mb-sm">
+<span class="material-symbols-outlined text-secondary">lock</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-secondary mb-xs break-words">Confidencialidade</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-justify">
+Suas respostas são tratadas de forma agregada e confidencial. O sistema garante o anonimato individual para assegurar um ambiente de total segurança psicológica.
+</p>
+</div>
+<div class="glass-card p-md rounded-xl border border-outline-variant/30 shadow-sm min-w-0">
+<div class="w-12 h-12 bg-surface-container-high rounded-lg flex items-center justify-center mb-sm">
+<span class="material-symbols-outlined text-tertiary-container">rocket_launch</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-tertiary mb-xs break-words">Impacto Real</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-justify">
+Sua voz direciona melhorias reais em segurança, liderança e cultura. A pesquisa é o primeiro passo para construirmos uma Remo Engenharia ainda melhor.
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+        (function () {
+            const modal = document.getElementById('faq-modal');
+            const abrir = () => {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+            };
+            const fechar = () => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            };
+            document.getElementById('link-faq').addEventListener('click', (e) => {
+                e.preventDefault();
+                abrir();
+            });
+            document.getElementById('btn-help').addEventListener('click', abrir);
+            document.getElementById('btn-fechar-faq').addEventListener('click', fechar);
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) fechar();
+            });
+
+            // "Sobre a Pesquisa": abre modal com os 3 cards
+            const modalSobre = document.getElementById('sobre-modal');
+            const abrirSobre = () => {
+                modalSobre.classList.remove('hidden');
+                modalSobre.classList.add('flex');
+            };
+            const fecharSobre = () => {
+                modalSobre.classList.add('hidden');
+                modalSobre.classList.remove('flex');
+            };
+            document.getElementById('link-sobre-pesquisa').addEventListener('click', (e) => {
+                e.preventDefault();
+                abrirSobre();
+            });
+            document.getElementById('btn-fechar-sobre').addEventListener('click', fecharSobre);
+            modalSobre.addEventListener('click', (e) => {
+                if (e.target === modalSobre) fecharSobre();
+            });
+        })();
+    </script>
+</body></html>

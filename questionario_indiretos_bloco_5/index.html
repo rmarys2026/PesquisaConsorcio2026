@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Questionário - Bloco 5 - Remo Engenharia</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=block" rel="stylesheet">
+<style>
+body { font-family: 'Inter', sans-serif; background-color: #f8f9ff; }
+.material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+.likert-option:hover .likert-circle { border-color: #063482; background-color: #eef2ff; }
+.likert-radio:checked + .likert-circle { background-color: #063482; border-color: #063482; box-shadow: 0 0 0 4px #d6e0ff; }
+.likert-radio:checked + .likert-circle::after { content: ''; width: 8px; height: 8px; background: white; border-radius: 50%; }
+.opcao-radio:checked ~ .opcao-caixa { border-color: #063482; background-color: #eef2ff; }
+.opcao-radio:checked ~ .opcao-caixa .opcao-bolinha { border-color: #063482; }
+.opcao-radio:checked ~ .opcao-caixa .opcao-bolinha::after { content: ''; display: block; width: 10px; height: 10px; margin: 3px; background: #063482; border-radius: 50%; }
+.opcao-checkbox:checked ~ .opcao-caixa { border-color: #1FC272; background-color: #eafff3; }
+.opcao-checkbox:checked ~ .opcao-caixa .opcao-quadrado { background-color: #1FC272; border-color: #1FC272; }
+.opcao-checkbox:checked ~ .opcao-caixa .opcao-quadrado::after { content: ''; color: white; font-size: 14px; line-height: 1; }
+</style>
+</head>
+<body class="text-[#0b1c30] min-h-screen flex flex-col">
+<header class="w-full bg-white border-b border-gray-200 sticky top-0 z-10">
+<div class="max-w-[720px] mx-auto px-6 py-4">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<img alt="Remo Engenharia" class="h-8 w-auto object-contain" src="../assets/img/logo-remo.png"/>
+</div>
+<span class="text-sm font-semibold text-[#063482]">Questionário • Bloco 5 de 7</span>
+</div>
+<div class="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
+<div class="h-full bg-[#1FC272] transition-all duration-500" style="width: 71%;"></div>
+</div>
+</div>
+</header>
+
+<main class="flex-grow max-w-[720px] mx-auto w-full px-6 py-8">
+<h1 class="text-2xl font-bold text-[#063482] mb-2">Questionário de Clima</h1>
+<p class="text-gray-600 mb-6">Bloco 5 de 7</p>
+
+<div class="space-y-4">
+<div class="bg-white border border-gray-200 rounded-xl p-5 shadow-sm">
+<div class="flex gap-3 items-start mb-4">
+<span class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-[#063482] flex items-center justify-center font-bold text-sm">21</span>
+<p class="text-gray-800 font-medium pt-1">Estou satisfeito(a) com as ações e celebrações promovidas pela empresa.</p>
+</div>
+<div class="grid grid-cols-4 gap-2">
+<div class="flex flex-col items-center gap-1">
+<label class="cursor-pointer likert-option flex flex-col items-center">
+<input class="hidden likert-radio" name="clima_ind_q21" type="radio" value="1"/>
+<div class="likert-circle w-9 h-9 rounded-full border-2 border-gray-300 flex items-center justify-center transition-all"></div>
+</label>
+<span class="text-[10px] text-center leading-tight text-gray-600 font-medium">Concordo fortemente</span>
+</div><div class="flex flex-col items-center gap-1">
+<label class="cursor-pointer likert-option flex flex-col items-center">
+<input class="hidden likert-radio" name="clima_ind_q21" type="radio" value="2"/>
+<div class="likert-circle w-9 h-9 rounded-full border-2 border-gray-300 flex items-center justify-center transition-all"></div>
+</label>
+<span class="text-[10px] text-center leading-tight text-gray-600 font-medium">Concordo parcialmente</span>
+</div><div class="flex flex-col items-center gap-1">
+<label class="cursor-pointer likert-option flex flex-col items-center">
+<input class="hidden likert-radio" name="clima_ind_q21" type="radio" value="3"/>
+<div class="likert-circle w-9 h-9 rounded-full border-2 border-gray-300 flex items-center justify-center transition-all"></div>
+</label>
+<span class="text-[10px] text-center leading-tight text-gray-600 font-medium">Discordo parcialmente</span>
+</div><div class="flex flex-col items-center gap-1">
+<label class="cursor-pointer likert-option flex flex-col items-center">
+<input class="hidden likert-radio" name="clima_ind_q21" type="radio" value="4"/>
+<div class="likert-circle w-9 h-9 rounded-full border-2 border-gray-300 flex items-center justify-center transition-all"></div>
+</label>
+<span class="text-[10px] text-center leading-tight text-gray-600 font-medium">Discordo fortemente</span>
+</div>
+</div>
+</div><div class="bg-white border border-gray-200 rounded-xl p-5 shadow-sm">
+<div class="flex gap-3 items-start mb-4">
+<span class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-[#063482] flex items-center justify-center font-bold text-sm">22</span>
+<p class="text-gray-800 font-medium pt-1">Posso expressar minha opinião e reportar problemas sem medo de represálias.</p>
+</div>
+<div class="grid grid-cols-4 gap-2">
+<div class="flex flex-col items-center gap-1">
+<label class="cursor-pointer likert-option flex flex-col items-center">
+<input class="hidden likert-radio" name="clima_ind_q22" type="radio" value="1"/>
+<div class="likert-circle w-9 h-9 rounded-full border-2 border-gray-300 flex items-center justify-center transition-all"></div>
+</label>
+<span class="text-[10px] text-center leading-tight text-gray-600 font-medium">Concordo fortemente</span>
+</div><div class="flex flex-col items-center gap-1">
+<label class="cursor-pointer likert-option flex flex-col items-center">
+<input class="hidden likert-radio" name="clima_ind_q22" type="radio" value="2"/>
+<div class="likert-circle w-9 h-9 rounded-full border-2 border-gray-300 flex items-center justify-center transition-all"></div>
+</label>
+<span class="text-[10px] text-center leading-tight text-gray-600 font-medium">Concordo parcialmente</span>
+</div><div class="flex flex-col items-center gap-1">
+<label class="cursor-pointer likert-option flex flex-col items-center">
+<input class="hidden likert-radio" name="clima_ind_q22" type="radio" value="3"/>
+<div class="likert-circle w-9 h-9 rounded-full border-2 border-gray-300 flex items-center justify-center transition-all"></div>
+</label>
+<span class="text-[10px] text-center leading-tight text-gray-600 font-medium">Discordo parcialmente</span>
+</div><div class="flex flex-col items-center gap-1">
+<label class="cursor-pointer likert-option flex flex-col items-center">
+<input class="hidden likert-radio" name="clima_ind_q22" type="radio" value="4"/>
+<div class="likert-circle w-9 h-9 rounded-full border-2 border-gray-300 flex items-center justify-center transition-all"></div>
+</label>
+<span class="text-[10px] text-center leading-tight text-gray-600 font-medium">Discordo fortemente</span>
+</div>
+</div>
+</div><div class="bg-white border border-gray-200 rounded-xl p-5 shadow-sm">
+<div class="flex gap-3 items-start mb-4">
+<span class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-[#063482] flex items-center justify-center font-bold text-sm">23</span>
+<p class="text-gray-800 font-medium pt-1">Sinto motivação para dar o meu melhor no trabalho.</p>
+</div>
+<div class="grid grid-cols-4 gap-2">
+<div class="flex flex-col items-center gap-1">
+<label class="cursor-pointer likert-option flex flex-col items-center">
+<input class="hidden likert-radio" name="clima_ind_q23" type="radio" value="1"/>
+<div class="likert-circle w-9 h-9 rounded-full border-2 border-gray-300 flex items-center justify-center transition-all"></div>
+</label>
+<span class="text-[10px] text-center leading-tight text-gray-600 font-medium">Concordo fortemente</span>
+</div><div class="flex flex-col items-center gap-1">
+<label class="cursor-pointer likert-option flex flex-col items-center">
+<input class="hidden likert-radio" name="clima_ind_q23" type="radio" value="2"/>
+<div class="likert-circle w-9 h-9 rounded-full border-2 border-gray-300 flex items-center justify-center transition-all"></div>
+</label>
+<span class="text-[10px] text-center leading-tight text-gray-600 font-medium">Concordo parcialmente</span>
+</div><div class="flex flex-col items-center gap-1">
+<label class="cursor-pointer likert-option flex flex-col items-center">
+<input class="hidden likert-radio" name="clima_ind_q23" type="radio" value="3"/>
+<div class="likert-circle w-9 h-9 rounded-full border-2 border-gray-300 flex items-center justify-center transition-all"></div>
+</label>
+<span class="text-[10px] text-center leading-tight text-gray-600 font-medium">Discordo parcialmente</span>
+</div><div class="flex flex-col items-center gap-1">
+<label class="cursor-pointer likert-option flex flex-col items-center">
+<input class="hidden likert-radio" name="clima_ind_q23" type="radio" value="4"/>
+<div class="likert-circle w-9 h-9 rounded-full border-2 border-gray-300 flex items-center justify-center transition-all"></div>
+</label>
+<span class="text-[10px] text-center leading-tight text-gray-600 font-medium">Discordo fortemente</span>
+</div>
+</div>
+</div><div class="bg-white border border-gray-200 rounded-xl p-5 shadow-sm">
+<div class="flex gap-3 items-start mb-4">
+<span class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-[#063482] flex items-center justify-center font-bold text-sm">24</span>
+<p class="text-gray-800 font-medium pt-1">As pessoas são tratadas com imparcialidade e equidade na empresa.</p>
+</div>
+<div class="grid grid-cols-4 gap-2">
+<div class="flex flex-col items-center gap-1">
+<label class="cursor-pointer likert-option flex flex-col items-center">
+<input class="hidden likert-radio" name="clima_ind_q24" type="radio" value="1"/>
+<div class="likert-circle w-9 h-9 rounded-full border-2 border-gray-300 flex items-center justify-center transition-all"></div>
+</label>
+<span class="text-[10px] text-center leading-tight text-gray-600 font-medium">Concordo fortemente</span>
+</div><div class="flex flex-col items-center gap-1">
+<label class="cursor-pointer likert-option flex flex-col items-center">
+<input class="hidden likert-radio" name="clima_ind_q24" type="radio" value="2"/>
+<div class="likert-circle w-9 h-9 rounded-full border-2 border-gray-300 flex items-center justify-center transition-all"></div>
+</label>
+<span class="text-[10px] text-center leading-tight text-gray-600 font-medium">Concordo parcialmente</span>
+</div><div class="flex flex-col items-center gap-1">
+<label class="cursor-pointer likert-option flex flex-col items-center">
+<input class="hidden likert-radio" name="clima_ind_q24" type="radio" value="3"/>
+<div class="likert-circle w-9 h-9 rounded-full border-2 border-gray-300 flex items-center justify-center transition-all"></div>
+</label>
+<span class="text-[10px] text-center leading-tight text-gray-600 font-medium">Discordo parcialmente</span>
+</div><div class="flex flex-col items-center gap-1">
+<label class="cursor-pointer likert-option flex flex-col items-center">
+<input class="hidden likert-radio" name="clima_ind_q24" type="radio" value="4"/>
+<div class="likert-circle w-9 h-9 rounded-full border-2 border-gray-300 flex items-center justify-center transition-all"></div>
+</label>
+<span class="text-[10px] text-center leading-tight text-gray-600 font-medium">Discordo fortemente</span>
+</div>
+</div>
+</div><div class="bg-white border border-gray-200 rounded-xl p-5 shadow-sm">
+<div class="flex gap-3 items-start mb-4">
+<span class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-[#063482] flex items-center justify-center font-bold text-sm">25</span>
+<p class="text-gray-800 font-medium pt-1">Os canais de comunicação da empresa atendem às minhas necessidades.</p>
+</div>
+<div class="grid grid-cols-4 gap-2">
+<div class="flex flex-col items-center gap-1">
+<label class="cursor-pointer likert-option flex flex-col items-center">
+<input class="hidden likert-radio" name="clima_ind_q25" type="radio" value="1"/>
+<div class="likert-circle w-9 h-9 rounded-full border-2 border-gray-300 flex items-center justify-center transition-all"></div>
+</label>
+<span class="text-[10px] text-center leading-tight text-gray-600 font-medium">Concordo fortemente</span>
+</div><div class="flex flex-col items-center gap-1">
+<label class="cursor-pointer likert-option flex flex-col items-center">
+<input class="hidden likert-radio" name="clima_ind_q25" type="radio" value="2"/>
+<div class="likert-circle w-9 h-9 rounded-full border-2 border-gray-300 flex items-center justify-center transition-all"></div>
+</label>
+<span class="text-[10px] text-center leading-tight text-gray-600 font-medium">Concordo parcialmente</span>
+</div><div class="flex flex-col items-center gap-1">
+<label class="cursor-pointer likert-option flex flex-col items-center">
+<input class="hidden likert-radio" name="clima_ind_q25" type="radio" value="3"/>
+<div class="likert-circle w-9 h-9 rounded-full border-2 border-gray-300 flex items-center justify-center transition-all"></div>
+</label>
+<span class="text-[10px] text-center leading-tight text-gray-600 font-medium">Discordo parcialmente</span>
+</div><div class="flex flex-col items-center gap-1">
+<label class="cursor-pointer likert-option flex flex-col items-center">
+<input class="hidden likert-radio" name="clima_ind_q25" type="radio" value="4"/>
+<div class="likert-circle w-9 h-9 rounded-full border-2 border-gray-300 flex items-center justify-center transition-all"></div>
+</label>
+<span class="text-[10px] text-center leading-tight text-gray-600 font-medium">Discordo fortemente</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex justify-between items-center gap-4 mt-8">
+<button class="flex items-center gap-2 px-5 py-3 border-2 border-[#063482] text-[#063482] font-bold rounded-lg hover:bg-[#eef2ff] transition-all active:scale-95" id="btn-anterior" type="button">
+<span class="material-symbols-outlined">arrow_back</span>
+Anterior
+</button>
+<button class="flex items-center gap-2 px-6 py-3 bg-[#063482] text-white font-bold rounded-lg hover:opacity-90 shadow-md transition-all active:scale-95" id="btn-proxima" type="button">
+Enviar
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<div class="hidden mt-4 px-4 py-3 rounded-lg text-sm font-medium" id="status-msg"></div>
+
+</main>
+<footer class="w-full py-6 bg-white border-t border-gray-200 mt-auto">
+<div class="max-w-[720px] mx-auto px-6 text-center">
+<p class="text-xs text-gray-500 mb-2">© 2026 Remo Engenharia. Sua participação é 100% anônima e segura.</p>
+<div class="flex justify-center gap-4">
+<a class="text-xs text-gray-500 hover:text-[#063482]" href="../suporte/index.html">Suporte</a>
+<a class="text-xs text-gray-500 hover:text-[#063482]" href="../privacidade/index.html">Privacidade</a>
+<a class="text-xs text-gray-500 hover:text-[#063482]" href="../termos-de-uso/index.html">Termos de Uso</a>
+</div>
+</div>
+</footer>
+<script src="../assets/sheetdb-connector.js"></script>
+<script>
+(function () {
+
+    const btnProxima = document.getElementById('btn-proxima');
+    const btnAnterior = document.getElementById('btn-anterior');
+    const statusMsg = document.getElementById('status-msg');
+
+    function mostrarStatus(msg, tipo) {
+        statusMsg.textContent = msg;
+        statusMsg.classList.remove('hidden', 'bg-red-100', 'text-red-700', 'bg-green-100', 'text-green-700');
+        statusMsg.classList.add(tipo === 'erro' ? 'bg-red-100' : 'bg-green-100', tipo === 'erro' ? 'text-red-700' : 'text-green-700');
+    }
+
+    const FIELDS = ['clima_ind_q21', 'clima_ind_q22', 'clima_ind_q23', 'clima_ind_q24', 'clima_ind_q25'];
+
+    function coletarRespostas() {
+        const dados = {};
+        FIELDS.forEach(campo => {
+            const marcado = document.querySelector(`input[name="${campo}"]:checked`);
+            if (marcado) dados[campo] = marcado.value;
+        });
+        return dados;
+    }
+
+    window.addEventListener('DOMContentLoaded', async () => {
+        await reenviarPendentes();
+        const salvo = await buscarRespostasSalvas();
+        if (salvo) {
+            FIELDS.forEach(campo => {
+                if (salvo[campo] === undefined) return;
+                const input = document.querySelector(`input[name="${campo}"][value="${salvo[campo]}"]`);
+                if (input) input.checked = true;
+            });
+        }
+    });
+
+    btnProxima.addEventListener('click', async () => {
+        const dados = coletarRespostas();
+        if (Object.keys(dados).length < FIELDS.length) {
+            mostrarStatus('Por favor, responda todas as afirmações antes de continuar.', 'erro');
+            return;
+        }
+        btnProxima.disabled = true;
+        try {
+            if (typeof salvarRespostasEtapa !== 'function') {
+                throw new Error('sheetdb-connector.js não carregou. Verifique a pasta "assets".');
+            }
+            const resultado = await salvarRespostasEtapa(dados);
+            if (resultado.ok) {
+                window.location.href = '../questionario_indiretos_bloco_6/index.html';
+                return;
+            }
+            mostrarStatus('Não foi possível salvar agora: ' + (resultado.error || 'erro desconhecido') + '. Suas respostas foram guardadas e serão reenviadas automaticamente.', 'erro');
+        } catch (err) {
+            console.error(err);
+            mostrarStatus('Erro inesperado: ' + err.message, 'erro');
+        } finally {
+            btnProxima.disabled = false;
+        }
+    });
+
+    btnAnterior.addEventListener('click', () => window.location.href = '../questionario_indiretos_bloco_4/index.html');
+})();
+</script>
+</body></html>

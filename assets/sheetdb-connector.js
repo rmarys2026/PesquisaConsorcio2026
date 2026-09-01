@@ -40,6 +40,28 @@ async function fetchComTimeout(url, options = {}, timeoutMs = 15000) {
 }
 
 /**
+ * Igual ao fetchComTimeout, mas tenta de novo automaticamente (com espera
+ * progressiva: 1s, 2s, 4s) se a chamada falhar por instabilidade de rede
+ * (ex: "Failed to fetch"). Isso evita perder respostas quando muita gente
+ * está enviando ao mesmo tempo e a rede/servidor engasga momentaneamente.
+ */
+async function fetchComRetry(url, options = {}, timeoutMs = 15000, maxTentativas = 3) {
+  let ultimoErro;
+  for (let tentativa = 1; tentativa <= maxTentativas; tentativa++) {
+    try {
+      return await fetchComTimeout(url, options, timeoutMs);
+    } catch (err) {
+      ultimoErro = err;
+      if (tentativa < maxTentativas) {
+        const esperaMs = Math.min(1000 * Math.pow(2, tentativa - 1), 5000);
+        await new Promise((resolve) => setTimeout(resolve, esperaMs));
+      }
+    }
+  }
+  throw ultimoErro;
+}
+
+/**
  * Gera (ou recupera) um ID único para esta sessão de resposta.
  * Usamos sessionStorage porque a pesquisa é anônima e feita em uma única
  * sessão (~8 min) — o ID não deve sobreviver ao fechar o navegador.
@@ -77,7 +99,7 @@ async function salvarRespostasEtapa(dadosEtapa) {
   try {
     // O Apps Script Web App não lida bem com preflight CORS para JSON,
     // então enviamos como text/plain (o conteúdo continua sendo JSON válido).
-    const resp = await fetchComTimeout(APPS_SCRIPT_CONFIG.apiUrl, {
+    const resp = await fetchComRetry(APPS_SCRIPT_CONFIG.apiUrl, {
       method: "POST",
       headers: { "Content-Type": "text/plain;charset=utf-8" },
       body: JSON.stringify(payload),
@@ -116,7 +138,7 @@ async function buscarRespostasSalvas() {
   if (APPS_SCRIPT_CONFIG.apiUrl.includes("COLE_AQUI_A_URL")) return null;
 
   try {
-    const resp = await fetchComTimeout(
+    const resp = await fetchComRetry(
       `${APPS_SCRIPT_CONFIG.apiUrl}?${APPS_SCRIPT_CONFIG.idColumn}=${responseId}`
     );
     if (!resp.ok) return null;
@@ -140,7 +162,7 @@ async function reenviarPendentes() {
   const restantes = [];
   for (const payload of pendentes) {
     try {
-      const resp = await fetchComTimeout(APPS_SCRIPT_CONFIG.apiUrl, {
+      const resp = await fetchComRetry(APPS_SCRIPT_CONFIG.apiUrl, {
         method: "POST",
         headers: { "Content-Type": "text/plain;charset=utf-8" },
         body: JSON.stringify(payload),

@@ -101,7 +101,9 @@ Finalizar Pesquisa
     });
 
     btnProxima.addEventListener('click', async () => {
+        const textoOriginalBtn = btnProxima.innerHTML;
         btnProxima.disabled = true;
+        btnProxima.innerHTML = '<span class="inline-block w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span> Salvando...';
         const dados = {
             pergunta_manter: document.getElementById('pergunta_manter').value.trim(),
             pergunta_parar: document.getElementById('pergunta_parar').value.trim(),
@@ -115,6 +117,7 @@ Finalizar Pesquisa
             if (!resultado.ok) {
                 mostrarStatus('Não foi possível salvar agora: ' + (resultado.error || 'erro desconhecido') + '. Suas respostas foram guardadas e serão reenviadas automaticamente.', 'erro');
                 btnProxima.disabled = false;
+                btnProxima.innerHTML = textoOriginalBtn;
                 return;
             }
             localStorage.setItem('remo_consorcio_2026_concluido', 'true');
@@ -129,6 +132,7 @@ Finalizar Pesquisa
             console.error(err);
             mostrarStatus('Erro inesperado: ' + err.message, 'erro');
             btnProxima.disabled = false;
+            btnProxima.innerHTML = textoOriginalBtn;
         }
     });
 

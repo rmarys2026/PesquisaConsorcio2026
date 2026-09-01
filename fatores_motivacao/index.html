@@ -173,7 +173,9 @@ Próxima Etapa
             mostrarStatus('Por favor, selecione pelo menos um fator ou preencha o campo "Outro".', 'erro');
             return;
         }
+        const __textoOriginalBtn = btnProxima.innerHTML;
         btnProxima.disabled = true;
+        btnProxima.innerHTML = '<span class="inline-block w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span> Salvando...';
         const dados = { fatores_motivacao: marcados.join(',') };
         if (outroInput.value.trim()) dados.fatores_motivacao_outro = outroInput.value.trim();
         try {
@@ -191,6 +193,7 @@ Próxima Etapa
             mostrarStatus('Erro inesperado: ' + err.message, 'erro');
         } finally {
             btnProxima.disabled = false;
+            btnProxima.innerHTML = __textoOriginalBtn;
         }
     });
 

@@ -280,7 +280,9 @@ Enviar
             mostrarStatus('Por favor, responda todas as afirmações antes de continuar.', 'erro');
             return;
         }
+        const __textoOriginalBtn = btnProxima.innerHTML;
         btnProxima.disabled = true;
+        btnProxima.innerHTML = '<span class="inline-block w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span> Salvando...';
         try {
             if (typeof salvarRespostasEtapa !== 'function') {
                 throw new Error('sheetdb-connector.js não carregou. Verifique a pasta "assets".');
@@ -296,6 +298,7 @@ Enviar
             mostrarStatus('Erro inesperado: ' + err.message, 'erro');
         } finally {
             btnProxima.disabled = false;
+            btnProxima.innerHTML = __textoOriginalBtn;
         }
     });
 
